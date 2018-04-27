@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-oraclejdk8:full
+FROM frolvlad/alpine-oraclejdk8:slim
 
 RUN apk update
 RUN apk add --no-cache openssl bash curl openntpd \
