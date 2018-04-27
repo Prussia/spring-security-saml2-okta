@@ -1,7 +1,9 @@
 FROM frolvlad/alpine-oraclejdk8:full
 
-RUN apk add --no-cache openssl bash curl \
+RUN apk update
+RUN apk add --no-cache openssl bash curl openntpd \
     && rm -rf /var/cache/apk/*
+ADD ntpd.conf /etc/ntpd.conf
 
 ENV APP_HOME /var/app
 ENV LOG ${APP_HOME}/logs
@@ -16,8 +18,7 @@ RUN sh -c 'touch /app.jar'
 
 ENV JAVA_OPTS=""
 
- 
- 
+CMD ["ntpd","-d" ,"-f", "/etc/ntpd.conf", "-s"]
 
 USER root
 
