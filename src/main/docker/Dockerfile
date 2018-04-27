@@ -13,7 +13,7 @@ RUN mkdir -p "${LOG}"
 VOLUME ["/tmp","${APP_HOME}","${LOG}"]
 
 WORKDIR /
-ADD spring-security-saml2-okta-0.0.1-SNAPSHOT.jar app.jar
+ADD spring-security-saml2-okta-1.0-SNAPSHOT.jar app.jar
 RUN sh -c 'touch /app.jar'
 
 ENV JAVA_OPTS=""
