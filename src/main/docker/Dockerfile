@@ -1,6 +1,6 @@
 FROM frolvlad/alpine-oraclejdk8:full
 
-RUN apk add --no-cache openssl  curl \
+RUN apk add --no-cache openssl bash curl \
     && rm -rf /var/cache/apk/*
 
 ENV APP_HOME /var/app
